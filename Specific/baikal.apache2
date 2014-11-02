@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+
+	DocumentRoot /home/ul67/public_html/baikal-flat
+	ServerName baikal.unilinedoo.local
+        ServerAlias baikal
+	
+        RewriteEngine On
+        RewriteRule /.well-known/carddav /card.php [R,L]
+        RewriteRule /.well-known/caldav /cal.php [R,L]
+
+	<Directory "/home/ul67/public_html/baikal-flat">
+		Options None
+		Options +FollowSymlinks
+		AllowOverride All
+	</Directory>
+
+</VirtualHost>
